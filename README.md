@@ -13,3 +13,15 @@ attacker and victim will not even know about that
     pip3 install tabulate
 # HOW TO USE IT
  first allow all permission
+  
+    git clone https://github.com/civicvchackoC3/ARP-Spoofer.git
+    cd Arp-Spoofer.py
+    chmod +x Arp-Spoofer.py
+# requirements.txt
+    pip install -r requirements.txt
+# RUN
+    ./Arp-Spoofer.p
+    OR
+    python3 Arp-Spoofer.py
+# Developer
+    civic v chacko
