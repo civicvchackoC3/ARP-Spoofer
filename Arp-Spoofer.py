@@ -85,6 +85,7 @@ elif options == '3':
             time.sleep(2)
     except KeyboardInterrupt:
         print("\nInterrupted Spoofing found CTRL + C------------ Restoring to normal state..")
+        
         restore(targetIP, gatewayIP)
         restore(gatewayIP, targetIP)
 
@@ -97,4 +98,4 @@ elif options == '3':
 
     spoofer(targetIP, gatewayIP)
     spoofer(gatewayIP, targetIP)
-    print(restart())
+    
