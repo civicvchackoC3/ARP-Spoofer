@@ -20,7 +20,7 @@ attacker and victim will not even know about that
 # requirements.txt
     pip install -r requirements.txt
 # RUN
-    ./Arp-Spoofer.p
+    ./Arp-Spoofer.pY
     OR
     python3 Arp-Spoofer.py
 # Developer
