@@ -53,9 +53,11 @@ elif options == '3':
     targetIP = str(input("\n\nEnter the target IP : "))
 
     gatewayIP = str(input("Enter the gateway IP  : "))
+    
     destinationmac = input("Enter the target MAC : ")
+    
     sourceMAC = input("source MAC : ")
-    restart()
+    
 
 
     def spoofer(targetIP, spoofIP):
