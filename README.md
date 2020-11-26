@@ -9,8 +9,8 @@ attacker and victim will not even know about that
 (install all the below libraries)
 
     pip3 install scapy
-    pip3 install art
-    pip3 install tabulate
+    pip3 install pyfiglet
+    pip3 install prettytable
 # HOW TO USE IT
  first allow all permission
   
