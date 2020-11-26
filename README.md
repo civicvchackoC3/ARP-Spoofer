@@ -10,7 +10,7 @@ attacker and victim will not even know about that
 
     pip3 install scapy
     pip3 install pyfiglet
-    pip3 install prettytable
+    pip3 install PTable
 # HOW TO USE IT
  first allow all permission
   
